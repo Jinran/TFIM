@@ -1,0 +1,31 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-jmessage": {
+            "APP_KEY": "2e675ac288e30e8109bda11e",
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        }
+    },
+    "dependent_plugins": {}
+}
