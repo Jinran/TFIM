@@ -22,6 +22,9 @@
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <name>ionic-tabs</name>
     <description>同方软银IM</description>
     <author email="you@example.com" href="http://example.com.com/">Dav</author>
@@ -37,6 +40,6 @@
     <preference name="InAppBrowserStorageEnabled" value="True" />
     <preference name="SuppressesIncrementalRendering" value="True" />
     <preference name="windows-target-version" value="10.0" />
-    <preference name="Fullscreen" value="True" />
+    <preference name="Fullscreen" value="False" />
     <preference name="Orientation" value="portrait" />
 </widget>

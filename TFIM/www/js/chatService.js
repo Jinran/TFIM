@@ -32,4 +32,9 @@
     this.sendSingleTextMessage = function (username, text, successCallback, errorCallback) {
         window.JMessage.sendSingleTextMessage(username, text, appkey, successCallback, errorCallback);
     };
+
+    //JM
+    this.onReceiveTextMessage = function (data) {
+
+    };
 })

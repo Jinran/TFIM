@@ -1,12 +1,17 @@
-﻿<ion-view view-title="Dashboard">
+﻿<ion-view view-title="通讯录">
     <ion-content>
         <div data-ng-init="load()"></div>
         <div>
             <input type="text" ng-model="username" placeholder="用户名" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
             <input type="password" ng-model="userpassword" placeholder="密码" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
+            <button ng-click="login(username, userpassword)">登录</button>
+            <button ng-click="register(username, userpassword)">注册</button>
         </div>
-        <button ng-click="login(username, userpassword)">登录</button>
-        <button ng-click="register(username, userpassword)">注册</button>
+        
+        <div>
+            <button ui-sref="register">跳转注册页面</button>
+        </div>
+
         <div>
             <input type="text" ng-model="text" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
             <button ng-click="sendSingleTextMessage(text)">发送</button>
