@@ -2,12 +2,6 @@
 
 .controller('DashCtrl', ['$scope', 'chat', '$document', function ($scope, chat, $document) {
 
-    $document.bind('jmessage.onReceiveMessage', function () {
-        var msg = window.JMessage.message;
-        console.log(msg.content.text);
-        alert(msg.content.text);
-    });
-
     $scope.username = '';
     $scope.userpassword = '';
     $scope.text = '';
@@ -35,7 +29,24 @@
     };
 }])
 
-.controller('ChatsCtrl', ['$scope', '$document', 'Chats', function ($scope, $document, Chats) {
+.controller('ChatsCtrl', ['$scope', '$document', '$ionicLoading', 'Chats', function ($scope, $document, $ionicLoading, Chats) {
+    $scope.conversations = new Array();
+    $scope.doRefresh = function () {
+        //取得会话列表
+        window.JMessage.getConversationList(function (response) {
+            $scope.conversations = response;
+            console.log($scope.conversations);
+        }, function (errorStr) {
+            $ionicLoading.show({
+                template: errorStr,
+                noBackdrop: true,
+                duration: 1000
+            });
+        });
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+    
+    
 
     $document.bind('jmessage.onReceiveMessage', function () {
         var msg = window.JMessage.message;
@@ -89,7 +100,7 @@
     };
 }])
 
-.controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', function ($scope, $state, $ionicLoading) {
+.controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', '$rootScope', function ($scope, $state, $ionicLoading, $rootScope) {
     $scope.login = function (username, userpassword) {
         window.JMessage.login(username, userpassword, function () {
             $ionicLoading.show({
@@ -97,6 +108,7 @@
                 noBackdrop: true,
                 duration: 1000
             });
+            $rootScope.isLogin = true;
             $state.go('tab.chats');
         }, function (errorStr) {
             $ionicLoading.show({

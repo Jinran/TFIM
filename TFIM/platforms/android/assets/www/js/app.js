@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'chatService'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,10 +19,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    var stateLoginView = ['tab', 'tab.chats', 'tab.dash', 'tab.chat-detail', 'tab.account'];
+    var loginView = ['login'];
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+        if (stateLoginView.indexOf(toState.name) >= 0 && !$rootScope.isLogin) {
+            $state.go('login');
+            event.preventDefault();
+        } else if (loginView.indexOf(toState.name) >= 0 && $rootScope.isLogin) {
+            $state.go('tab.chats');
+            event.preventDefault();
+        }
+    });
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -45,12 +58,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $ionicConfigProvider.platform.android.views.transition('android');
 
   $stateProvider
-
-      .state('login', {
-          url: '/login',
-          templateUrl: 'templates/login.html',
-          controller: 'LoginCtrl'
-      })
 
   // setup an abstract state for the tabs directive
     .state('tab', {
@@ -99,6 +106,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+
+      .state('login', {
+          url: '/login',
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
+      })
 
   .state('register', {
       url: '/register',
