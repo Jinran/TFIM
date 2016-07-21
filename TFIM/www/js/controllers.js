@@ -1,41 +1,28 @@
 ﻿angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['$scope', 'chat', '$document', function ($scope, chat, $document) {
+.controller('DashCtrl', ['$scope', '$document', function ($scope, $document) {
 
     $scope.username = '';
     $scope.userpassword = '';
-    $scope.text = '';
-    $scope.login = function (username, userpassword) {
-        chat.login(username, userpassword, function () {
-            alert('登录成功');
-        }, function (errorStr) {
-            alert(errorStr);
-        });
-    };
-
-    $scope.register = function (username, userpassword) {
-        chat.register(username, userpassword, function () {
-            alert("注册成功");
-        }, function (errorStr) {
-            alert(errorStr);
-        })
-    };
+    
     $scope.sendSingleTextMessage = function (text) {
-        chat.sendSingleTextMessage('jinran', text, function (response) {
+        window.JMessage.sendSingleTextMessage('jinran', text, function (response) {
             //alert('发送消息成功');
         }, function (errorStr) {
             alert('发送消息失败：' + errorStr);
         })
     };
-}])
 
-.controller('ChatsCtrl', ['$scope', '$document', '$ionicLoading', 'Chats', function ($scope, $document, $ionicLoading, Chats) {
-    $scope.conversations = new Array();
+    $scope.chatUserList = new Array();
+    $scope.$on('chatUsers.update', function (event) {
+        $scope.chatUserList = chat.chatUsers();
+        console.log($scope.chatUserList);
+        $scope.$apply();
+    });
     $scope.doRefresh = function () {
         //取得会话列表
-        window.JMessage.getConversationList(function (response) {
-            $scope.conversations = response;
-            console.log($scope.conversations);
+        $scope.chatList = Chat.update(function (response) {
+            //console.log(response);
         }, function (errorStr) {
             $ionicLoading.show({
                 template: errorStr,
@@ -43,32 +30,72 @@
                 duration: 1000
             });
         });
+
         $scope.$broadcast('scroll.refreshComplete');
-    };
-    
-    
-
-    $document.bind('jmessage.onReceiveMessage', function () {
-        var msg = window.JMessage.message;
-        console.log(msg.content.text);
-        alert(msg.content.text);
-    });
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
-
-    $scope.chats = Chats.all();
-    $scope.remove = function (chat) {
-        Chats.remove(chat);
     };
 }])
 
+.controller('ChatsCtrl', ['$scope', '$document', '$ionicLoading', '$rootScope', 'Chat', function ($scope, $document, $ionicLoading, $rootScope, Chat) {
+    $scope.chatList = new Array();
+    $scope.$on('chats.update', function (event) {
+        $scope.chatList = Chat.chats();
+        console.log($scope.chatList);
+        $scope.$apply();
+    });
+    $scope.doRefresh = function () {
+        //取得会话列表
+        $scope.chatList = Chat.updateChats(function (response) {
+            //console.log(response);
+        }, function (errorStr) {
+            $ionicLoading.show({
+                template: errorStr,  
+                noBackdrop: true,
+                duration: 1000
+            });
+        });
+
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+    
+    $scope.remove = function (username) {
+        window.JMessage.deleteSingleConversation(username, $rootScope.appKey, function () {
+            //取得会话列表
+            $scope.chatList = Chat.updateChats(function (response) {
+                //console.log(response);
+            }, function (errorStr) {
+                $ionicLoading.show({
+                    template: errorStr,
+                    noBackdrop: true,
+                    duration: 1000
+                });
+            });
+        }, function (errorStr) {
+            $ionicLoading.show({
+                template: errorStr,
+                noBackdrop: true,
+                duration: 1000
+            });
+        })
+    };
+
+    //全局监听事件，监听广播获取的消息
+    $document.bind('jmessage.onReceiveMessage', function () {
+        //console.log(window.JMessage.message.content.text);
+        //取得会话列表
+        $scope.chatList = Chat.updateChats(function (response) {
+            //console.log(response);
+        }, function (errorStr) {
+            $ionicLoading.show({
+                template: errorStr,
+                noBackdrop: true,
+                duration: 1000
+            });
+        });
+    });
+}])
+
 .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
+    //$scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function ($scope) {
@@ -108,6 +135,9 @@
                 noBackdrop: true,
                 duration: 1000
             });
+            var userSession = new Object();
+            userSession.username = username;
+            $rootScope.userSession = userSession;
             $rootScope.isLogin = true;
             $state.go('tab.chats');
         }, function (errorStr) {

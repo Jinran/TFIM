@@ -20,6 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
 
+    $rootScope.appKey = '2e675ac288e30e8109bda11e';
     var stateLoginView = ['tab', 'tab.chats', 'tab.dash', 'tab.chat-detail', 'tab.account'];
     var loginView = ['login'];
 
