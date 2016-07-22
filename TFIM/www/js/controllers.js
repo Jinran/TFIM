@@ -1,12 +1,13 @@
 ﻿angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['$scope', '$document', function ($scope, $document) {
+.controller('DashCtrl', ['$scope', '$document', 'Chat', function ($scope, $document, Chat) {
 
     $scope.username = '';
     $scope.userpassword = '';
+    $scope.text = '';
     
     $scope.sendSingleTextMessage = function (text) {
-        window.JMessage.sendSingleTextMessage('jinran', text, function (response) {
+        window.JMessage.sendSingleTextMessage('jinran', text, null, function (response) {
             //alert('发送消息成功');
         }, function (errorStr) {
             alert('发送消息失败：' + errorStr);
@@ -15,13 +16,13 @@
 
     $scope.chatUserList = new Array();
     $scope.$on('chatUsers.update', function (event) {
-        $scope.chatUserList = chat.chatUsers();
-        console.log($scope.chatUserList);
+        $scope.chatUserList = Chat.chatUsers();
+        //console.log($scope.chatUserList);
         $scope.$apply();
     });
     $scope.doRefresh = function () {
         //取得会话列表
-        $scope.chatList = Chat.update(function (response) {
+        $scope.chatList = Chat.updateChatUsers(function (response) {
             //console.log(response);
         }, function (errorStr) {
             $ionicLoading.show({
@@ -42,10 +43,11 @@
         console.log($scope.chatList);
         $scope.$apply();
     });
+    
     $scope.doRefresh = function () {
         //取得会话列表
         $scope.chatList = Chat.updateChats(function (response) {
-            //console.log(response);
+            console.log(response);
         }, function (errorStr) {
             $ionicLoading.show({
                 template: errorStr,  
@@ -56,7 +58,12 @@
 
         $scope.$broadcast('scroll.refreshComplete');
     };
-    
+    //首次进入刷新，获取历史消息
+    $scope.doRefresh();
+    //进入会话
+    $scope.enterChat = function () {
+
+    };
     $scope.remove = function (username) {
         window.JMessage.deleteSingleConversation(username, $rootScope.appKey, function () {
             //取得会话列表

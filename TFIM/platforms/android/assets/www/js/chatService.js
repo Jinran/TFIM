@@ -1,6 +1,7 @@
 ﻿/**
  * 用户会话列表service
  * 需要cordova-plugin-JMessage插件支持
+ * JMessage暂时不支持通讯录功能，chatUsers对象模拟通讯录
  * Date 2016-07-21
  * @author Dav
  */
@@ -8,7 +9,19 @@ angular.module('chatService', [])
 
 .service('Chat', ['$rootScope', function ($rootScope) {
     var chats = new Array();
-    var chatUsers = new Array();
+    var chatUsers = [{
+        username: 'tangliang'
+    }, {
+        username: 'jinran'
+    }, {
+        username: 'guanfujin'
+    }, {
+        username: 'miaoyunli'
+    }, {
+        username: 'liuyu'
+    }, {
+        username: 'wangwei'
+    }];
     var userInfo = new Array();
 
     return {
