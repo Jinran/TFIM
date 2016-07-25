@@ -109,9 +109,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
       .state('singleContact', {
-          url: '/singleContact?username',
+          url: '/singleContact?username&targetid',
           templateUrl: 'templates/single-contact.html',
-          controller: 'singleContactCtrl'
+          controller: 'singleContactCtrl',
+          abstract: false
       })
 
       .state('login', {
