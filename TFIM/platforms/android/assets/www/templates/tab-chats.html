@@ -2,7 +2,7 @@
   <ion-content>
     <ion-refresher pulling-text="下拉获取消息..." refreshing-text="消息获取成功" refreshing-icon="ion-ios-paperplane" on-refresh="doRefresh()"></ion-refresher>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in chatList track by $index" type="item-text-wrap" href="#/tab/chats/{{data.a}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in chatList track by $index" type="item-text-wrap" ui-sref="singleContact({username: data.targetId})">
         <!--<img ng-src="{{data.face}}">-->
         <h2>{{data.title}}</h2>
         <p>{{data.latestText}}</p>

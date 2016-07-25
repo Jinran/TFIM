@@ -1,0 +1,14 @@
+﻿<ion-view view-title="{{username}}">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar" collection-repeat="data in singleChats track by $index">
+                <img ng-src="img/ben.png">
+                <p>{{data.content.text}}</p>
+            </ion-item>
+        </ion-list>
+        <div class="bar bar-footer bar-stable">
+            <input type="text" ng-model="text" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
+            <button ng-click="sendSingleTextMessage(text)">发送</button>
+        </div>
+    </ion-content>
+</ion-view>

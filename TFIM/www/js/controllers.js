@@ -2,19 +2,10 @@
 
 .controller('DashCtrl', ['$scope', '$document', 'Chat', function ($scope, $document, Chat) {
 
-    $scope.username = '';
-    $scope.userpassword = '';
-    $scope.text = '';
     
-    $scope.sendSingleTextMessage = function (text) {
-        window.JMessage.sendSingleTextMessage('jinran', text, null, function (response) {
-            //alert('发送消息成功');
-        }, function (errorStr) {
-            alert('发送消息失败：' + errorStr);
-        })
-    };
 
-    $scope.chatUserList = new Array();
+    $scope.chatUserList = Chat.chatUsers();
+    console.log($scope.chatUserList);
     $scope.$on('chatUsers.update', function (event) {
         $scope.chatUserList = Chat.chatUsers();
         //console.log($scope.chatUserList);
@@ -22,15 +13,7 @@
     });
     $scope.doRefresh = function () {
         //取得会话列表
-        $scope.chatList = Chat.updateChatUsers(function (response) {
-            //console.log(response);
-        }, function (errorStr) {
-            $ionicLoading.show({
-                template: errorStr,
-                noBackdrop: true,
-                duration: 1000
-            });
-        });
+        $scope.chatList = Chat.chatUsers();
 
         $scope.$broadcast('scroll.refreshComplete');
     };
@@ -101,15 +84,46 @@
     });
 }])
 
+    .controller('singleContactCtrl', ['$scope', '$rootScope', '$stateParams', '$document', '$ionicLoading', function ($scope, $rootScope, $stateParams, $document, $ionicLoading) {
+        $scope.username = $stateParams.username;
+        $scope.singleChats = new Array();
+        window.JMessage.getHistoryMessages('single', $stateParams.username, null, 0, 50, function (response) {
+            $scope.singleChats = angular.fromJson(response);
+            console.log($scope.singleChats);
+            $rootScope.$broadcast('singleContact.update');
+        }, function (errorStr) {
+            $ionicLoading.show({
+                template: errorStr,
+                noBackdrop: true,
+                duration: 1000
+            });
+        });
+
+        $scope.$on('singleContact.update', function (event) {
+
+        });
+    }])
+
 .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
     //$scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-        enableFriends: true
+.controller('AccountCtrl', ['$scope', function ($scope) {
+
+    $scope.username = '';
+    $scope.text = '';
+
+    $scope.sendSingleTextMessage = function (username, text) {
+        window.JMessage.sendSingleTextMessage(username, text, null, function (response) {
+            //alert('发送消息成功');
+        }, function (errorStr) {
+            alert('发送消息失败：' + errorStr);
+        })
     };
-})
+}])
+    .controller('contactsDetail', ['$scope', function ($scope) {
+
+    }])
 
 .controller('RegisterCtrl', ['$scope', '$ionicLoading', '$location', function ($scope, $ionicLoading, $location) {
     $scope.username = '';
