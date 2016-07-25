@@ -21,10 +21,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"JMessagePlugin\"><param name=\"ios-package\" value=\"JMessagePlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -38,6 +34,10 @@
                         },
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"JMessagePlugin\"><param name=\"ios-package\" value=\"JMessagePlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -65,10 +65,6 @@
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
         },
-        "cordova-plugin-jmessage": {
-            "APP_KEY": "2e675ac288e30e8109bda11e",
-            "PACKAGE_NAME": "com.tfrunning.tfim"
-        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
         },
@@ -76,6 +72,10 @@
             "PACKAGE_NAME": "com.tfrunning.tfim"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-jmessage": {
+            "APP_KEY": "2e675ac288e30e8109bda11e",
             "PACKAGE_NAME": "com.tfrunning.tfim"
         }
     },
@@ -114,22 +114,6 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
-            "id": "cordova-plugin-jmessage.JMessagePlugin",
-            "pluginId": "cordova-plugin-jmessage",
-            "clobbers": [
-                "JMessage"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
-            "id": "cordova-plugin-jmessage.JPushPlugin",
-            "pluginId": "cordova-plugin-jmessage",
-            "clobbers": [
-                "JPush"
-            ]
-        },
-        {
             "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
             "id": "cordova-plugin-statusbar.statusbar",
             "pluginId": "cordova-plugin-statusbar",
@@ -145,15 +129,31 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
+            "id": "cordova-plugin-jmessage.JMessagePlugin",
+            "pluginId": "cordova-plugin-jmessage",
+            "clobbers": [
+                "JMessage"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
+            "id": "cordova-plugin-jmessage.JPushPlugin",
+            "pluginId": "cordova-plugin-jmessage",
+            "clobbers": [
+                "JPush"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-console": "1.0.3",
         "cordova-plugin-device": "1.1.2",
         "cordova-plugin-dialogs": "1.2.1",
-        "cordova-plugin-jmessage": "2.0.0",
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-whitelist": "1.2.2",
-        "ionic-plugin-keyboard": "1.0.9"
+        "ionic-plugin-keyboard": "1.0.9",
+        "cordova-plugin-jmessage": "2.1.0"
     }
 }

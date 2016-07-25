@@ -28,6 +28,10 @@
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVAppDelegate.h>
 
+//JMessage remove code mark //JMessage add 
 @interface AppDelegate : CDVAppDelegate {}
 
+
+
+//JMessage remove code mark; //JMessage add 
 @end

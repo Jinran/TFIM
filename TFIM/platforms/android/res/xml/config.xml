@@ -1,12 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.tfrunning.tfim" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <feature name="JMessagePlugin">
-        <param name="android-package" value="cn.jmessage.phonegap.JMessagePlugin" />
-    </feature>
-    <feature name="JPushPlugin">
-        <param name="android-package" value="cn.jmessage.phonegap.JPushPlugin" />
-    </feature>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
@@ -24,6 +18,12 @@
     </feature>
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="JMessagePlugin">
+        <param name="android-package" value="cn.jmessage.phonegap.JMessagePlugin" />
+    </feature>
+    <feature name="JPushPlugin">
+        <param name="android-package" value="cn.jmessage.phonegap.JPushPlugin" />
     </feature>
     <name>ionic-tabs</name>
     <description>同方软银IM</description>

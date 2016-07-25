@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-jmessage"
-        version="2.0.0">
+        version="2.1.0">
 
     <name>JMessage PhoneGap Plugin</name>
     <description>集成极光 IM 和推送功能</description>
@@ -15,6 +15,9 @@
     <engines>
         <engine name="cordova" version=">=3.0"/>
     </engines>
+
+    <!-- dependencies -->
+    <dependency id="cordova-plugin-device" />
 
     <js-module src="www/JMessagePlugin.js" name="JMessagePlugin">
         <clobbers target="JMessage"/>
@@ -57,7 +60,7 @@
         <framework src="libz.tbd"/>
         <framework src="libsqlite3.0.tbd"/>
         <config-file target="*JMessageConfig.plist" parent="APP_KEY">
-          <string>2e675ac288e30e8109bda11e</string>
+          <string>$APP_KEY</string>
         </config-file>
     </platform>
 
@@ -90,10 +93,10 @@
             <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
-            <uses-permission android:name="com.tfrunning.tfim.permission.JPUSH_MESSAGE"/>
+            <uses-permission android:name="$PACKAGE_NAME.permission.JPUSH_MESSAGE"/>
 
             <permission
-                android:name="com.tfrunning.tfim.permission.JPUSH_MESSAGE"
+                android:name="$PACKAGE_NAME.permission.JPUSH_MESSAGE"
                 android:protectionLevel="signature"/>
 
             <!-- JMessage Demo required for record audio-->
@@ -123,7 +126,7 @@
                 <intent-filter android:priority="1000">
                     <!--Required  显示通知栏 -->
                     <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
-                    <category android:name="com.tfrunning.tfim" />
+                    <category android:name="$PACKAGE_NAME" />
                 </intent-filter>
                 <intent-filter>
                     <action android:name="android.intent.action.USER_PRESENT" />
@@ -144,7 +147,7 @@
               <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
                 <!-- Required 显示通知栏 -->
-                <category android:name="com.tfrunning.tfim"/>
+                <category android:name="$PACKAGE_NAME"/>
               </intent-filter>
               <intent-filter>
                 <action android:name="cn.jpush.android.intent.REGISTRATION"/>
@@ -158,7 +161,7 @@
                 <!-- Required 用户打开自定义通知栏的 intent -->
                 <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/>
                 <!-- Optional 用户接受 Rich Push Javascript 回调函数的 intent -->
-                <category android:name="com.tfrunning.tfim"/>
+                <category android:name="$PACKAGE_NAME"/>
               </intent-filter>
             </receiver>
 
@@ -171,7 +174,7 @@
                 <intent-filter>
                     <action android:name="cn.jpush.android.ui.PushActivity" />
                     <category android:name="android.intent.category.DEFAULT" />
-                    <category android:name="com.tfrunning.tfim" />
+                    <category android:name="$PACKAGE_NAME" />
                 </intent-filter>
             </activity>
 
@@ -202,7 +205,7 @@
                     <action android:name="cn.jpush.im.android.action.IM_RESPONSE" />
                     <action android:name="cn.jpush.im.android.action.NOTIFICATION_CLICK_PROXY" />
 
-                    <category android:name="com.tfrunning.tfim" />
+                    <category android:name="$PACKAGE_NAME" />
                 </intent-filter>
             </receiver>
 
@@ -214,24 +217,24 @@
                 android:exported="true">
                 <intent-filter>
                     <action android:name="cn.jpush.android.intent.DaemonService" />
-                    <category android:name="com.tfrunning.tfim" />
+                    <category android:name="$PACKAGE_NAME" />
                 </intent-filter>
             </service>
 
-            <meta-data android:name="JPUSH_APPKEY" android:value="2e675ac288e30e8109bda11e"/>
+            <meta-data android:name="JPUSH_APPKEY" android:value="$APP_KEY"/>
             <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
         </config-file>
 
         <source-file src="src/android/gson-2.3.1.jar" target-dir="libs"/>
-        <source-file src="src/android/jmessage-android-1.2.5.jar" target-dir="libs"/>
+        <source-file src="src/android/jmessage-android-1.3.0.jar" target-dir="libs"/>
 
-        <source-file src="src/android/armeabi/libjpush211.so" target-dir="libs/armeabi"/>
-        <source-file src="src/android/armeabi-v7a/libjpush211.so" target-dir="libs/armeabi-v7a"/>
-        <source-file src="src/android/arm64-v8a/libjpush211.so" target-dir="libs/arm64-v8a"/>
-        <source-file src="src/android/x86_64/libjpush211.so" target-dir="libs/x86_64"/>
-        <source-file src="src/android/x86/libjpush211.so" target-dir="libs/x86"/>
-        <source-file src="src/android/mips64/libjpush211.so" target-dir="libs/mips64"/>
-        <source-file src="src/android/mips/libjpush211.so" target-dir="libs/mips"/>
+        <source-file src="src/android/armeabi/libjpush216.so" target-dir="libs/armeabi"/>
+        <source-file src="src/android/armeabi-v7a/libjpush216.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/arm64-v8a/libjpush216.so" target-dir="libs/arm64-v8a"/>
+        <source-file src="src/android/x86_64/libjpush216.so" target-dir="libs/x86_64"/>
+        <source-file src="src/android/x86/libjpush216.so" target-dir="libs/x86"/>
+        <source-file src="src/android/mips64/libjpush216.so" target-dir="libs/mips64"/>
+        <source-file src="src/android/mips/libjpush216.so" target-dir="libs/mips"/>
 
         <source-file src="src/android/JMessagePlugin.java" target-dir="src/cn/jmessage/phonegap"/>
         <source-file src="src/android/JPushPlugin.java" target-dir="src/cn/jmessage/phonegap"/>

@@ -1,20 +1,19 @@
 ﻿<ion-view view-title="通讯录">
     <ion-content>
-        <div data-ng-init="load()"></div>
-        <div>
-            <input type="text" ng-model="username" placeholder="用户名" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
-            <input type="password" ng-model="userpassword" placeholder="密码" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
-            <button ng-click="login(username, userpassword)">登录</button>
-            <button ng-click="register(username, userpassword)">注册</button>
-        </div>
-        
-        <div>
-            <button ui-sref="register">跳转注册页面</button>
-        </div>
-
         <div>
             <input type="text" ng-model="text" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
             <button ng-click="sendSingleTextMessage(text)">发送</button>
         </div>
+        <ion-refresher pulling-text="下拉获取消息..." refreshing-text="消息获取成功" refreshing-icon="ion-ios-paperplane" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in chatList track by $index" type="item-text-wrap" ng-click="enterChat()">
+                <!--<img ng-src="{{data.face}}">-->
+                <h2>{{data.title}}</h2>
+                <p>{{data.latestText}}</p>
+                <p>{{data.unReadMsgCnt}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-option-button class="button-assertive">删除</ion-option-button>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

@@ -9,14 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"JMessagePlugin\"><param name=\"android-package\" value=\"cn.jmessage.phonegap.JMessagePlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"JPushPlugin\"><param name=\"android-package\" value=\"cn.jmessage.phonegap.JPushPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
@@ -34,6 +26,14 @@
                         },
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"JMessagePlugin\"><param name=\"android-package\" value=\"cn.jmessage.phonegap.JMessagePlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"JPushPlugin\"><param name=\"android-package\" value=\"cn.jmessage.phonegap.JPushPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -174,10 +174,6 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-jmessage": {
-            "APP_KEY": "2e675ac288e30e8109bda11e",
-            "PACKAGE_NAME": "com.tfrunning.tfim"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
         },
@@ -195,24 +191,14 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-jmessage": {
+            "APP_KEY": "2e675ac288e30e8109bda11e",
+            "PACKAGE_NAME": "com.tfrunning.tfim"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
-            "id": "cordova-plugin-jmessage.JMessagePlugin",
-            "clobbers": [
-                "JMessage"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
-            "id": "cordova-plugin-jmessage.JPushPlugin",
-            "clobbers": [
-                "JPush"
-            ]
-        },
         {
             "file": "plugins/cordova-plugin-device/www/device.js",
             "id": "cordova-plugin-device.device",
@@ -248,15 +234,29 @@
             "merges": [
                 "navigator.notification"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
+            "id": "cordova-plugin-jmessage.JMessagePlugin",
+            "clobbers": [
+                "JMessage"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
+            "id": "cordova-plugin-jmessage.JPushPlugin",
+            "clobbers": [
+                "JPush"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-jmessage": "2.0.0",
         "cordova-plugin-device": "1.1.2",
         "cordova-plugin-console": "1.0.3",
         "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-statusbar": "2.1.3",
         "ionic-plugin-keyboard": "1.0.9",
-        "cordova-plugin-dialogs": "1.2.1"
+        "cordova-plugin-dialogs": "1.2.1",
+        "cordova-plugin-jmessage": "2.1.0"
     }
 }
