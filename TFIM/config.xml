@@ -29,4 +29,7 @@
   <plugin name="cordova-plugin-jmessage" version="2.1.0" src="https://github.com/jpush/jmessage-phonegap-plugin.git">
     <variable name="APP_KEY" value="2e675ac288e30e8109bda11e" />
   </plugin>
+  <plugin name="cordova-plugin-camera" version="2.2.0" />
+  <plugin name="cordova-plugin-image-picker" version="1.1.1" src="https://github.com/wymsee/cordova-imagePicker.git" />
+  <plugin name="cordova-plugin-compat" version="1.0.0" />
 </widget>

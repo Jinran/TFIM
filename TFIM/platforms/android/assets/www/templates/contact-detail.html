@@ -1,0 +1,10 @@
+﻿<ion-view title="详细信息">
+    <ion-content>
+        <div class="item-remove-animate item-avatar item-icon-right">
+            <img ng-src="{{gender}}">
+            <div>{{username}}</div>
+            <div>{{targetid}}</div>
+        </div>
+        <button class="button" style="width: 100%;margin-top: 5px;background-color: #77f394" ui-sref="singleContact({username: username, targetid: targetid})">发消息</button>
+    </ion-content>
+</ion-view>

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'chatService', 'singleContact'])
+angular.module('starter', ['ionic', 'tf.util.help', 'starter.controllers', 'starter.services', 'chatService', 'singleContact', 'contactDetail'])
 
 .run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
@@ -112,7 +112,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           url: '/singleContact?username&targetid',
           templateUrl: 'templates/single-contact.html',
           controller: 'singleContactCtrl',
-          abstract: false
+          cache: false,
+      })
+
+      .state('contactDetail', {
+          url: '/contactDetail?username&targetid',
+          templateUrl: 'templates/contact-detail.html',
+          controller: 'contactDetailCtrl',
+          cache: false,
       })
 
       .state('login', {

@@ -1,19 +1,20 @@
 ﻿angular.module('singleContact', [])
 
 .controller('singleContactCtrl', ['$scope', '$rootScope', '$stateParams', '$document', '$ionicLoading', function ($scope, $rootScope, $stateParams, $document, $ionicLoading) {
+    $scope.order_item = 'createTimeInMillis';
+    $scope.order_reverse = true;
     //进入会话，初始化基础变量
     $scope.username = $stateParams.username;    //用户名称（昵称）
     $scope.targetid = $stateParams.targetid;    //用户ID（username）
+    $scope.text = '';
     //进入会话后，不接收push消息，直接弹出消息内容
-    window.JMessage.enterSingleConversation($scope.targetid, null, function () {
-        console.log('进入'+$scope.username+'会话成功');
-    }, function (errorStr) {
+    /*window.JMessage.enterSingleConversation($scope.targetid, null, null, function (errorStr) {
         $ionicLoading.show({
             template: errorStr,
             noBackdrop: true,
             duration: 1000
         });
-    });
+    });*/
     //会话内容列表
     $scope.singleChats = new Array();
     //首次进入会话面板，获取历史消息50条并展示
@@ -22,6 +23,7 @@
         console.log($scope.singleChats);
         //发送广播事件singleContact.update
         $rootScope.$broadcast('singleContact.update');
+        $scope.$apply();
     }, function (errorStr) {
         $ionicLoading.show({
             template: errorStr,
@@ -36,17 +38,27 @@
         $scope.singleChats.push(newMsg);
         //发送广播事件singleContact.update
         $rootScope.$broadcast('singleContact.update');
+        $scope.$apply();
     });
     //接收广播事件singleContact.update
     $scope.$on('singleContact.update', function (event) {
         //TODO 将滚动条置于最低部
     });
 
-    $scope.sendSingleTextMessage = function (username, text) {
-        window.JMessage.sendSingleTextMessage(username, text, null, function (response) {
-            //alert('发送消息成功');
+    $scope.sendSingleTextMessage = function (text) {
+        window.JMessage.sendSingleTextMessage($scope.targetid, text, null, function (response) {
+            $scope.text = '';
+            var respMsg = angular.fromJson(response);
+            $scope.singleChats.push(respMsg);
+            //发送广播事件singleContact.update
+            $rootScope.$broadcast('singleContact.update');
+            $scope.$apply();
         }, function (errorStr) {
-            alert('发送消息失败：' + errorStr);
+            $ionicLoading.show({
+                template: errorStr,
+                noBackdrop: true,
+                duration: 1000
+            });
         })
     };
 }])

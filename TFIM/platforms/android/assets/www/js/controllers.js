@@ -1,8 +1,10 @@
 ﻿angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['$scope', '$document', 'Chat', function ($scope, $document, Chat) {
+.controller('DashCtrl', ['$scope', '$rootScope', '$document', 'Chat', function ($scope, $rootScope, $document, Chat) {
 
-    
+    $scope.exceptOwn = function (e) {
+        return e.username != $rootScope.userSession.username;
+    };
 
     $scope.chatUserList = Chat.chatUsers();
     console.log($scope.chatUserList);
@@ -101,9 +103,6 @@
         })
     };
 }])
-    .controller('contactsDetail', ['$scope', function ($scope) {
-
-    }])
 
 .controller('RegisterCtrl', ['$scope', '$ionicLoading', '$location', function ($scope, $ionicLoading, $location) {
     $scope.username = '';
