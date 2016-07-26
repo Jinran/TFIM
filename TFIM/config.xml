@@ -26,4 +26,7 @@
   <preference name="Fullscreen" value="False" />
   <preference name="Orientation" value="portrait" />
   <plugin name="cordova-plugin-dialogs" version="1.2.1" />
+  <plugin name="cordova-plugin-jmessage" version="2.1.0" src="https://github.com/jpush/jmessage-phonegap-plugin.git">
+    <variable name="APP_KEY" value="2e675ac288e30e8109bda11e" />
+  </plugin>
 </widget>

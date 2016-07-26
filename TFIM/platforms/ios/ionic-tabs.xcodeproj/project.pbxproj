@@ -32,6 +32,10 @@
 		6EF43AD73C1B4C1A8736E089 /* libsqlite3.0.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A747F329A4DAC92ED44C6 /* libsqlite3.0.tbd */; };
 		28643F0B2E3D44F89983B488 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F137D04CAD4B8DA4F45DE6 /* CDVStatusBar.m */; };
 		22E1B0012FD54440AAC7437F /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4913D503FBA4B89854BA971 /* IonicKeyboard.m */; };
+		05124AD87003490D8E9D0B74 /* JMessagePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F17F5FB6799B45C891FA4BC0 /* JMessagePlugin.m */; };
+		EF906591669D49729AE78A1F /* JMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB8ABC338EB4AD8ADEFEB1F /* JMessageHelper.m */; };
+		2019B643F2964C95BF2AC80F /* JMessageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = DED4A32F03874506A728E7D4 /* JMessageConfig.plist */; };
+		F384DA783349488B961EDF1D /* JMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38597A01D39A4AAA8F594FB6 /* JMessage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,13 @@
 		6E7362292325402BA0F33F94 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		E4913D503FBA4B89854BA971 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		0CCD981455BB4EE9994117FF /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		F17F5FB6799B45C891FA4BC0 /* JMessagePlugin.m */ = {isa = PBXFileReference; name = "JMessagePlugin.m"; path = "cordova-plugin-jmessage/JMessagePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3EB8ABC338EB4AD8ADEFEB1F /* JMessageHelper.m */ = {isa = PBXFileReference; name = "JMessageHelper.m"; path = "cordova-plugin-jmessage/JMessageHelper.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		1990D051B63042C18A000DDC /* JMessagePlugin.h */ = {isa = PBXFileReference; name = "JMessagePlugin.h"; path = "cordova-plugin-jmessage/JMessagePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E13744D43DBE40D08EFA7854 /* JMessageHelper.h */ = {isa = PBXFileReference; name = "JMessageHelper.h"; path = "cordova-plugin-jmessage/JMessageHelper.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3DB5A14ECD3648C29AF9F3F2 /* ConstantDef.h */ = {isa = PBXFileReference; name = "ConstantDef.h"; path = "cordova-plugin-jmessage/ConstantDef.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DED4A32F03874506A728E7D4 /* JMessageConfig.plist */ = {isa = PBXFileReference; name = "JMessageConfig.plist"; path = "JMessageConfig.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
+		38597A01D39A4AAA8F594FB6 /* JMessage.framework */ = {isa = PBXFileReference; name = "JMessage.framework"; path = "ionic-tabs/Plugins/cordova-plugin-jmessage/JMessage.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +123,7 @@
 				88F3A1D0179F433D9A7EE33F /* Security.framework in Frameworks */,
 				4684178D355449F8A23EDEA2 /* libz.tbd in Resources */,
 				6EF43AD73C1B4C1A8736E089 /* libsqlite3.0.tbd in Resources */,
+				F384DA783349488B961EDF1D /* JMessage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +186,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* ionic-tabs-Info.plist */,
 				F7BF5EEC67414DB082713145 /* CDVNotification.bundle */,
+				DED4A32F03874506A728E7D4 /* JMessageConfig.plist */,
 			);
 			name = Resources;
 			path = "ionic-tabs/Resources";
@@ -193,6 +206,7 @@
 				0BE191D9E32449C7B57B2C57 /* Security.framework */,
 				64B3C2C1C647461F9E638FC6 /* libz.tbd */,
 				3E0A747F329A4DAC92ED44C6 /* libsqlite3.0.tbd */,
+				38597A01D39A4AAA8F594FB6 /* JMessage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,6 +242,11 @@
 				6E7362292325402BA0F33F94 /* CDVStatusBar.h */,
 				E4913D503FBA4B89854BA971 /* IonicKeyboard.m */,
 				0CCD981455BB4EE9994117FF /* IonicKeyboard.h */,
+				F17F5FB6799B45C891FA4BC0 /* JMessagePlugin.m */,
+				3EB8ABC338EB4AD8ADEFEB1F /* JMessageHelper.m */,
+				1990D051B63042C18A000DDC /* JMessagePlugin.h */,
+				E13744D43DBE40D08EFA7854 /* JMessageHelper.h */,
+				3DB5A14ECD3648C29AF9F3F2 /* ConstantDef.h */,
 			);
 			name = Plugins;
 			path = "ionic-tabs/Plugins";
@@ -312,6 +331,7 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
 				1C8206CB23C44443AB4303DA /* CDVNotification.bundle in Resources */,
+				2019B643F2964C95BF2AC80F /* JMessageConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +368,8 @@
 				B8AE5AD7DC3D434C965BE215 /* CDVNotification.m in Sources */,
 				28643F0B2E3D44F89983B488 /* CDVStatusBar.m in Sources */,
 				22E1B0012FD54440AAC7437F /* IonicKeyboard.m in Sources */,
+				05124AD87003490D8E9D0B74 /* JMessagePlugin.m in Sources */,
+				EF906591669D49729AE78A1F /* JMessageHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +408,7 @@
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
+					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 				);
 			};
 			name = Debug;
@@ -408,6 +431,7 @@
 				PRODUCT_NAME = "ionic-tabs";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",
 					"\"ionic-tabs/Plugins/cordova-plugin-jmessage\"",

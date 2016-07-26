@@ -30,9 +30,14 @@
 
 //JMessage remove code mark //JMessage add
 
+//JMessage remove code mark //JMessage add
+
 //JMessage remove code mark //JMessage add 
 @interface AppDelegate : CDVAppDelegate {}
 
+
+
+//JMessage remove code mark; //JMessage add 
 
 
 //JMessage remove code mark; //JMessage add 
