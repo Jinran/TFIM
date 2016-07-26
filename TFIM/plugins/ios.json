@@ -24,10 +24,6 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
-        },
-        "cordova-plugin-jmessage": {
-            "APP_KEY": "2e675ac288e30e8109bda11e",
-            "PACKAGE_NAME": "com.tfrunning.tfim"
         }
     },
     "dependent_plugins": {}

@@ -35,20 +35,6 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
-        "id": "cordova-plugin-jmessage.JMessagePlugin",
-        "clobbers": [
-            "JMessage"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
-        "id": "cordova-plugin-jmessage.JPushPlugin",
-        "clobbers": [
-            "JPush"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -59,8 +45,7 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "ionic-plugin-keyboard": "1.0.9",
-    "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-jmessage": "2.1.0"
+    "cordova-plugin-dialogs": "1.2.1"
 };
 // BOTTOM OF METADATA
 });

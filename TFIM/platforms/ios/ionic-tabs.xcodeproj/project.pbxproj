@@ -32,10 +32,6 @@
 		6EF43AD73C1B4C1A8736E089 /* libsqlite3.0.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 3E0A747F329A4DAC92ED44C6 /* libsqlite3.0.tbd */; };
 		28643F0B2E3D44F89983B488 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F137D04CAD4B8DA4F45DE6 /* CDVStatusBar.m */; };
 		22E1B0012FD54440AAC7437F /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4913D503FBA4B89854BA971 /* IonicKeyboard.m */; };
-		EB53D2053F424DA996F33DEE /* JMessagePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E13F252E90425B973E1438 /* JMessagePlugin.m */; };
-		313B1B90CD3747CC920D9893 /* JMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B71C5215EFC43989919134E /* JMessageHelper.m */; };
-		653EDC3D1E284D69A6B6E1B7 /* JMessageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = F37EB74FCBC54B7BBAD85315 /* JMessageConfig.plist */; };
-		E4DF87C23ED84D3A8596F1DF /* JMessage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB995BCFE7546FB8C3FFADD /* JMessage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,13 +93,6 @@
 		6E7362292325402BA0F33F94 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		E4913D503FBA4B89854BA971 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		0CCD981455BB4EE9994117FF /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		E9E13F252E90425B973E1438 /* JMessagePlugin.m */ = {isa = PBXFileReference; name = "JMessagePlugin.m"; path = "cordova-plugin-jmessage/JMessagePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		2B71C5215EFC43989919134E /* JMessageHelper.m */ = {isa = PBXFileReference; name = "JMessageHelper.m"; path = "cordova-plugin-jmessage/JMessageHelper.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		A8CDD9686D704F9984344BD1 /* JMessagePlugin.h */ = {isa = PBXFileReference; name = "JMessagePlugin.h"; path = "cordova-plugin-jmessage/JMessagePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		92F3EDC498714B23B3A68FC1 /* JMessageHelper.h */ = {isa = PBXFileReference; name = "JMessageHelper.h"; path = "cordova-plugin-jmessage/JMessageHelper.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		111B7502A7F24DEA8199F7FE /* ConstantDef.h */ = {isa = PBXFileReference; name = "ConstantDef.h"; path = "cordova-plugin-jmessage/ConstantDef.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		F37EB74FCBC54B7BBAD85315 /* JMessageConfig.plist */ = {isa = PBXFileReference; name = "JMessageConfig.plist"; path = "JMessageConfig.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
-		BCB995BCFE7546FB8C3FFADD /* JMessage.framework */ = {isa = PBXFileReference; name = "JMessage.framework"; path = "ionic-tabs/Plugins/cordova-plugin-jmessage/JMessage.framework"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +112,6 @@
 				88F3A1D0179F433D9A7EE33F /* Security.framework in Frameworks */,
 				4684178D355449F8A23EDEA2 /* libz.tbd in Resources */,
 				6EF43AD73C1B4C1A8736E089 /* libsqlite3.0.tbd in Resources */,
-				E4DF87C23ED84D3A8596F1DF /* JMessage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +174,6 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* ionic-tabs-Info.plist */,
 				F7BF5EEC67414DB082713145 /* CDVNotification.bundle */,
-				F37EB74FCBC54B7BBAD85315 /* JMessageConfig.plist */,
 			);
 			name = Resources;
 			path = "ionic-tabs/Resources";
@@ -206,7 +193,6 @@
 				0BE191D9E32449C7B57B2C57 /* Security.framework */,
 				64B3C2C1C647461F9E638FC6 /* libz.tbd */,
 				3E0A747F329A4DAC92ED44C6 /* libsqlite3.0.tbd */,
-				BCB995BCFE7546FB8C3FFADD /* JMessage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,11 +228,6 @@
 				6E7362292325402BA0F33F94 /* CDVStatusBar.h */,
 				E4913D503FBA4B89854BA971 /* IonicKeyboard.m */,
 				0CCD981455BB4EE9994117FF /* IonicKeyboard.h */,
-				E9E13F252E90425B973E1438 /* JMessagePlugin.m */,
-				2B71C5215EFC43989919134E /* JMessageHelper.m */,
-				A8CDD9686D704F9984344BD1 /* JMessagePlugin.h */,
-				92F3EDC498714B23B3A68FC1 /* JMessageHelper.h */,
-				111B7502A7F24DEA8199F7FE /* ConstantDef.h */,
 			);
 			name = Plugins;
 			path = "ionic-tabs/Plugins";
@@ -331,7 +312,6 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
 				1C8206CB23C44443AB4303DA /* CDVNotification.bundle in Resources */,
-				653EDC3D1E284D69A6B6E1B7 /* JMessageConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +348,6 @@
 				B8AE5AD7DC3D434C965BE215 /* CDVNotification.m in Sources */,
 				28643F0B2E3D44F89983B488 /* CDVStatusBar.m in Sources */,
 				22E1B0012FD54440AAC7437F /* IonicKeyboard.m in Sources */,
-				EB53D2053F424DA996F33DEE /* JMessagePlugin.m in Sources */,
-				313B1B90CD3747CC920D9893 /* JMessageHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,8 +32,10 @@
 
 - (BOOL)application:(UIApplication*)application    didFinishLaunchingWithOptions:(NSDictionary*)launchOptions{ 
  	//------------------------------JMessage start----------------------------------- 
-    _jmessage = [JMessageHelper new]; 
-    [_jmessage initJMessage:launchOptions]; 
+    
+//JMessage remove code mark; 
+    
+//JMessage remove code mark; 
     //------------------------------JMessage end----------------------------------- 
  	//------------------------------JMessage start----------------------------------- 
     
@@ -52,29 +54,29 @@
 }
 
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken { 
-    [JPUSHService registerDeviceToken:deviceToken]; 
-
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 //JMessage remove code mark; 
-
-//JMessage remove code mark; 
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo { 
-    [JPUSHService handleRemoteNotification:userInfo]; 
 
 //JMessage remove code mark; 
 
 //JMessage remove code mark; 
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler { 
-    [_jmessage didReceiveRemoteNotification:userInfo];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+//JMessage remove code mark; 
+
+//JMessage remove code mark; 
+
+//JMessage remove code mark; 
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+//JMessage remove code mark;
 //JMessage remove code mark;
 //JMessage remove code mark; 
 }
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification { 
-    [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil]; 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+//JMessage remove code mark; 
 
 //JMessage remove code mark; 
 

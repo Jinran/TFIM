@@ -10,17 +10,23 @@ angular.module('chatService', [])
 .service('Chat', ['$rootScope', function ($rootScope) {
     var chats = new Array();
     var chatUsers = [{
-        username: 'tangliang'
+        username: 'tangliang',
+        nickname: '汤亮'
     }, {
-        username: 'jinran'
+        username: 'jinran',
+        nickname: '金然'
     }, {
-        username: 'guanfujin'
+        username: 'guanfujin',
+        nickname: '关富今'
     }, {
-        username: 'miaoyunli'
+        username: 'miaoyunli',
+        nickname: '苗云利'
     }, {
-        username: 'liuyu'
+        username: 'liuyu',
+        nickname: '刘宇'
     }, {
-        username: 'wangwei'
+        username: 'wangwei',
+        nickname: '王玮'
     }];
     var userInfo = new Array();
 

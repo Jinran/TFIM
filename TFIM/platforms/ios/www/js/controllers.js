@@ -2,19 +2,10 @@
 
 .controller('DashCtrl', ['$scope', '$document', 'Chat', function ($scope, $document, Chat) {
 
-    $scope.username = '';
-    $scope.userpassword = '';
-    $scope.text = '';
     
-    $scope.sendSingleTextMessage = function (text) {
-        window.JMessage.sendSingleTextMessage('jinran', text, null, function (response) {
-            //alert('发送消息成功');
-        }, function (errorStr) {
-            alert('发送消息失败：' + errorStr);
-        })
-    };
 
-    $scope.chatUserList = new Array();
+    $scope.chatUserList = Chat.chatUsers();
+    console.log($scope.chatUserList);
     $scope.$on('chatUsers.update', function (event) {
         $scope.chatUserList = Chat.chatUsers();
         //console.log($scope.chatUserList);
@@ -22,15 +13,7 @@
     });
     $scope.doRefresh = function () {
         //取得会话列表
-        $scope.chatList = Chat.updateChatUsers(function (response) {
-            //console.log(response);
-        }, function (errorStr) {
-            $ionicLoading.show({
-                template: errorStr,
-                noBackdrop: true,
-                duration: 1000
-            });
-        });
+        $scope.chatList = Chat.chatUsers();
 
         $scope.$broadcast('scroll.refreshComplete');
     };
@@ -105,11 +88,22 @@
     //$scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-        enableFriends: true
+.controller('AccountCtrl', ['$scope', function ($scope) {
+
+    $scope.username = '';
+    $scope.text = '';
+
+    $scope.sendSingleTextMessage = function (username, text) {
+        window.JMessage.sendSingleTextMessage(username, text, null, function (response) {
+            //alert('发送消息成功');
+        }, function (errorStr) {
+            alert('发送消息失败：' + errorStr);
+        })
     };
-})
+}])
+    .controller('contactsDetail', ['$scope', function ($scope) {
+
+    }])
 
 .controller('RegisterCtrl', ['$scope', '$ionicLoading', '$location', function ($scope, $ionicLoading, $location) {
     $scope.username = '';

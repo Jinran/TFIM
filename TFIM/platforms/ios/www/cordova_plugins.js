@@ -48,22 +48,6 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-jmessage/www/JMessagePlugin.js",
-        "id": "cordova-plugin-jmessage.JMessagePlugin",
-        "pluginId": "cordova-plugin-jmessage",
-        "clobbers": [
-            "JMessage"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-jmessage/www/JPushPlugin.js",
-        "id": "cordova-plugin-jmessage.JPushPlugin",
-        "pluginId": "cordova-plugin-jmessage",
-        "clobbers": [
-            "JPush"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -74,8 +58,7 @@ module.exports.metadata =
     "cordova-plugin-dialogs": "1.2.1",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-whitelist": "1.2.2",
-    "ionic-plugin-keyboard": "1.0.9",
-    "cordova-plugin-jmessage": "2.1.0"
+    "ionic-plugin-keyboard": "1.0.9"
 }
 // BOTTOM OF METADATA
 });

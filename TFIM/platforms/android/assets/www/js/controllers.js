@@ -84,41 +84,6 @@
     });
 }])
 
-    .controller('singleContactCtrl', ['$scope', '$rootScope', '$stateParams', '$document', '$ionicLoading', function ($scope, $rootScope, $stateParams, $document, $ionicLoading) {
-        $scope.username = $stateParams.username;
-        $scope.targetid = $stateParams.targetid;
-
-        $scope.singleChats = new Array();
-        window.JMessage.getHistoryMessages('single', $scope.targetid, null, 0, 50, function (response) {
-            $scope.singleChats = angular.fromJson(response);
-            console.log($scope.singleChats);
-            //$rootScope.$broadcast('singleContact.update');
-        }, function (errorStr) {
-            $ionicLoading.show({
-                template: errorStr,
-                noBackdrop: true,
-                duration: 1000
-            });
-        });
-
-        $document.bind('jmessage.onReceiveMessage', function(){
-            alert(window.JMessage.message.content.text);
-            //$scope.singleChats.push(window.JMessage.message);
-        });
-
-        /*$scope.$on('singleContact.update', function (event) {
-
-        });*/
-
-        $scope.sendSingleTextMessage = function (username, text) {
-                window.JMessage.sendSingleTextMessage(username, text, null, function (response) {
-                    //alert('发送消息成功');
-                }, function (errorStr) {
-                    alert('发送消息失败：' + errorStr);
-                })
-            };
-    }])
-
 .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
     //$scope.chat = Chats.get($stateParams.chatId);
 })
