@@ -1,7 +1,7 @@
 ﻿angular.module('starter.controllers', [])
 
 .controller('DashCtrl', ['$scope', '$rootScope', '$document', 'Chat', function ($scope, $rootScope, $document, Chat) {
-
+        
     $scope.exceptOwn = function (e) {
         return e.username != $rootScope.userSession.username;
     };

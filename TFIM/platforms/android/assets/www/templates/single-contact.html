@@ -1,7 +1,7 @@
 ﻿<ion-view view-title="{{username}}" cache-view="false">
     <ion-content>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar" collection-repeat="data in singleChats track by data.createTimeInMillis">
+            <ion-item class="item-remove-animate item-avatar" collection-repeat="data in singleChats | orderBy: 'createTimeInMillis' track by $index">
                 <img ng-src="{{data.fromUser.gender}}">
                 <!--<div>{{data.fromName}}</div>-->
                 <div>{{data.content.text}}</div>

@@ -2,7 +2,7 @@
     <ion-content>
         <ion-refresher pulling-text="下拉刷新通讯录..." refreshing-text="通讯录获取成功" refreshing-icon="ion-ios-paperplane" on-refresh="doRefresh()"></ion-refresher>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in chatUserList track by $index | filter: exceptOwn" type="item-text-wrap" ui-sref="contactDetail({username: data.nickname, targetid: data.username})">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="data in chatUserList | filter: exceptOwn track by $index" type="item-text-wrap" ui-sref="contactDetail({username: data.nickname, targetid: data.username})">
                 <!--<img ng-src="{{data.face}}">-->
                 <p>{{data.nickname}}</p>
                 <p>{{data.username}}</p>
