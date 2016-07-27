@@ -34,6 +34,12 @@
         },
         "cordova-plugin-image-picker": {
             "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.tfrunning.tfim"
         }
     },
     "dependent_plugins": {

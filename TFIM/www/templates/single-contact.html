@@ -1,16 +1,18 @@
 ﻿<ion-view view-title="{{username}}" cache-view="false">
     <ion-content>
-        <ion-list>
-            <ion-item class="item-remove-animate item-avatar" collection-repeat="data in singleChats | orderBy: 'createTimeInMillis' track by $index">
-                <img ng-src="{{data.fromUser.gender}}">
-                <!--<div>{{data.fromName}}</div>-->
-                <div>{{data.content.text}}</div>
-            </ion-item>
-        </ion-list>
-        
-    </ion-content>
+        <ion-list class="list">
+            <div class="bubble-container" collection-repeat="data in singleChats | orderBy: 'createTimeInMillis' track by $index">
+                <div class="avatar avatar-{{data.direct}}">
+                    <img ng-src="{{data.fromUser.gender}}">
+                </div>
+                <div class="bubble bubble-{{data.direct}}">{{data.content.text}}</div>
+            </div>
+            </ion-content>
     <div class="bar bar-footer bar-stable">
         <input type="text" ng-model="text" style="border: 1px solid #808080; border-radius: 5px;padding: 5px;" />
         <button class="button" ng-click="sendSingleTextMessage(text)">发送</button>
     </div>
+        </ion-list>
+        
+    
 </ion-view>

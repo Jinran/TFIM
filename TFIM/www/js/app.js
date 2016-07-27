@@ -5,7 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'tf.util.help', 'starter.controllers', 'starter.services', 'chatService', 'singleContact', 'contactDetail'])
+angular.module('starter', [
+    'ionic',
+    'ngCordova',
+    'tf.util.help', 
+    'tf.util.ui-router', 
+    'login',
+    'register',
+    'test',
+    'chats', 
+    'contacts',
+    'chatService', 
+    'singleContact', 
+    'contactDetail'
+])
 
 .run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
@@ -21,7 +34,7 @@ angular.module('starter', ['ionic', 'tf.util.help', 'starter.controllers', 'star
     }
 
     $rootScope.appKey = '2e675ac288e30e8109bda11e';
-    var stateLoginView = ['tab', 'tab.chats', 'tab.dash', 'tab.chat-detail', 'tab.account'];
+    var stateLoginView = ['tab', 'tab.chats', 'tab.contacts', 'tab.me', 'tab.test'];
     var loginView = ['login'];
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
@@ -36,12 +49,7 @@ angular.module('starter', ['ionic', 'tf.util.help', 'starter.controllers', 'star
   });
 })
 
-.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-    // Each state's controller can be found in controllers.js
+.config(function ($ionicConfigProvider) {
 
     $ionicConfigProvider.platform.ios.tabs.style('standard');
     $ionicConfigProvider.platform.ios.tabs.position('bottom');
@@ -57,84 +65,4 @@ angular.module('starter', ['ionic', 'tf.util.help', 'starter.controllers', 'star
 
     $ionicConfigProvider.platform.ios.views.transition('ios');
     $ionicConfigProvider.platform.android.views.transition('android');
-
-  $stateProvider
-
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
-
-      .state('singleContact', {
-          url: '/singleContact?username&targetid',
-          templateUrl: 'templates/single-contact.html',
-          controller: 'singleContactCtrl',
-          cache: false,
-      })
-
-      .state('contactDetail', {
-          url: '/contactDetail?username&targetid',
-          templateUrl: 'templates/contact-detail.html',
-          controller: 'contactDetailCtrl',
-          cache: false,
-      })
-
-      .state('login', {
-          url: '/login',
-          templateUrl: 'templates/login.html',
-          controller: 'LoginCtrl'
-      })
-
-  .state('register', {
-      url: '/register',
-      templateUrl: 'templates/register.html',
-      controller: 'RegisterCtrl'
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('login');
-
 });

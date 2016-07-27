@@ -53,6 +53,11 @@
 		3CE3ACAF282B41728F2D2379 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE43AA7B7F24F448674C304 /* ELCAssetTablePicker.xib */; };
 		98E1FACC989344F7840EE1B0 /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AA25AB16BC974F5B8B7D28EF /* Overlay.png */; };
 		57C0EE1ACE364C6CB867FE07 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D68A911092974E84AC48AC9F /* Overlay@2x.png */; };
+		815B80BA72F342FE9E3C6D0F /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A45EB0120C840E6B4FC5789 /* SQLitePlugin.m */; };
+		9DAE21EE66944B37A50DBD8C /* sqlite3.c in Resources */ = {isa = PBXBuildFile; fileRef = BB00EFC6D24C48A68D262932 /* sqlite3.c */; settings = {COMPILER_FLAGS = "-DSQLITE_TEMP_STORE=2 -DSQLITE_THREADSAFE=2 -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_COLUMN_METADATA -DSQLITE_ENABLE_RTREE -DSQLITE_LOCKING_STYLE=1 -DSQLITE_OMIT_BUILTIN_TEST -DSQLITE_OMIT_LOAD_EXTENSION"; }; };
+		261505A8D5A54C848F68F131 /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DC39A00151234274A3EEA6F5 /* CDVFile.m */; };
+		B317777B15214066BA383102 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = A9286830567B45CEBCC4A260 /* CDVLocalFilesystem.m */; };
+		B1AAC7473CE841CBAB8E571E /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B773845200E4CFBAE7E17BE /* CDVAssetLibraryFilesystem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +155,16 @@
 		4AE43AA7B7F24F448674C304 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; name = "ELCAssetTablePicker.xib"; path = "ELCAssetTablePicker.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 		AA25AB16BC974F5B8B7D28EF /* Overlay.png */ = {isa = PBXFileReference; name = "Overlay.png"; path = "Overlay.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D68A911092974E84AC48AC9F /* Overlay@2x.png */ = {isa = PBXFileReference; name = "Overlay@2x.png"; path = "Overlay@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A45EB0120C840E6B4FC5789 /* SQLitePlugin.m */ = {isa = PBXFileReference; name = "SQLitePlugin.m"; path = "cordova-sqlite-storage/SQLitePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		BB00EFC6D24C48A68D262932 /* sqlite3.c */ = {isa = PBXFileReference; name = "sqlite3.c"; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DFC8185D843B4C248DF42FA4 /* SQLitePlugin.h */ = {isa = PBXFileReference; name = "SQLitePlugin.h"; path = "cordova-sqlite-storage/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		94B3B1F858B34F4B83394281 /* sqlite3.h */ = {isa = PBXFileReference; name = "sqlite3.h"; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DC39A00151234274A3EEA6F5 /* CDVFile.m */ = {isa = PBXFileReference; name = "CDVFile.m"; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A9286830567B45CEBCC4A260 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; name = "CDVLocalFilesystem.m"; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6B773845200E4CFBAE7E17BE /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.m"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5B7949A4B34644F8AC91FB0C /* CDVFile.h */ = {isa = PBXFileReference; name = "CDVFile.h"; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		D8144A79030C4E2DBA4FF538 /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; name = "CDVLocalFilesystem.h"; path = "cordova-plugin-file/CDVLocalFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		27DD40C4A66E4F83848C610B /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +340,16 @@
 				4F917083A240481F8B153B60 /* ELCAssetSelectionDelegate.h */,
 				FD4C2B62226D4EFA807E02FA /* ELCAssetTablePicker.h */,
 				CE1B61B0999A4D9EBBF64D33 /* ELCImagePickerController.h */,
+				7A45EB0120C840E6B4FC5789 /* SQLitePlugin.m */,
+				BB00EFC6D24C48A68D262932 /* sqlite3.c */,
+				DFC8185D843B4C248DF42FA4 /* SQLitePlugin.h */,
+				94B3B1F858B34F4B83394281 /* sqlite3.h */,
+				DC39A00151234274A3EEA6F5 /* CDVFile.m */,
+				A9286830567B45CEBCC4A260 /* CDVLocalFilesystem.m */,
+				6B773845200E4CFBAE7E17BE /* CDVAssetLibraryFilesystem.m */,
+				5B7949A4B34644F8AC91FB0C /* CDVFile.h */,
+				D8144A79030C4E2DBA4FF538 /* CDVLocalFilesystem.h */,
+				27DD40C4A66E4F83848C610B /* CDVAssetLibraryFilesystem.h */,
 			);
 			name = Plugins;
 			path = "ionic-tabs/Plugins";
@@ -462,6 +487,11 @@
 				541EB11CCC1E40AA89844A1A /* ELCAssetCell.m in Sources */,
 				5EA50A174E514AA5861E950C /* ELCAssetTablePicker.m in Sources */,
 				504A1BEB104B4E0DBDADDD5F /* ELCImagePickerController.m in Sources */,
+				815B80BA72F342FE9E3C6D0F /* SQLitePlugin.m in Sources */,
+				9DAE21EE66944B37A50DBD8C /* sqlite3.c in Resources */,
+				261505A8D5A54C848F68F131 /* CDVFile.m in Sources */,
+				B317777B15214066BA383102 /* CDVLocalFilesystem.m in Sources */,
+				B1AAC7473CE841CBAB8E571E /* CDVAssetLibraryFilesystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
