@@ -3,84 +3,51 @@
 /*
     contact-detail css
 */
-/*聊天框*/
-.bubble-container{
-	/*display:block;*/
-	clear: both;
-	/*position:relative;*/
-	margin-bottom:10px;
-	/*min-height: 53px;*/
-}
-/*头像*/
-.avatar{
-	border: 2px solid #ffffff;
-	box-sizing: initial;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+.bubbo-container {
+  clear: both;
+  border: none;
 }
 
-.avatar,.avatar img{
-	width: 50px;
-	height: 50px;
-	-webkit-border-radius: 30px; /* Saf3+, Chrome */
-	border-radius: 30px; /* Opera 10.5, IE 9 */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing:  inherit;
+  box-sizing:  inherit;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.15) ;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15) ;
 }
 
-.bubble{
-	padding: 13px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background: rgba(255, 255, 255, 0.9);
-	color: #575858;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+.bubbo {
+  padding: 13px;
+  width: 60%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space:normal;
+
+  color: #575858;
+
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.15) ;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15) ;
 }
 
-/*.avatar-receive:before {
-	content: '';
-	position: absolute;
-	border-style: solid;
-	border-width: 10px 14px 10px 0;
-	border-color: transparent #ffffff;
-	display: block;
-	width: 0;
-	z-index: 1;
-	left: 61px;
-	top: 13px;
-    background: #77f394;
-}*/
-
-/*.avatar-send:before 
-{
-	content: '';
-	position: absolute;
-	border-style: solid;
-	border-width: 10px 0 10px 14px;
-	border-color: transparent #ffffff;
-	display: block;
-	width: 0;
-	z-index: 1;
-	right: 61px;
-	top: 13px;
-}*/
-
-/* Positionning of the avatar and the bubble */
-.avatar-receive{
-	float: left;
-	width: 50px;
+.bubbo-send {
+  float: right;
+  background: rgba(255, 255, 255, 0.9);
+  margin-right: 15px;
 }
-
-.bubble-receive{
-	overflow: hidden;
-	margin-left: 75px;
-    background: #77f394;
+.avatar-send {
+  float: right;
 }
-
-.avatar-send{
-	float: right;
-	width: 50px;
+.bubbo-receive {
+  float: left;
+  background: #77f394;
+  margin-left: 15px;
 }
-
-.bubble-send{
-	overflow: hidden;
-	margin-right: 75px;
+.avatar-receive {
+  float: left;
 }

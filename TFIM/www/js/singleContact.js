@@ -1,6 +1,6 @@
 ﻿angular.module('singleContact', [])
 
-.controller('singleContactCtrl', ['$scope', '$rootScope', '$stateParams', '$document', '$ionicLoading', function ($scope, $rootScope, $stateParams, $document, $ionicLoading) {
+.controller('singleContactCtrl', ['$scope', '$rootScope', '$stateParams', '$document', '$ionicLoading', '$ionicScrollDelegate', function ($scope, $rootScope, $stateParams, $document, $ionicLoading, $ionicScrollDelegate) {
     $scope.order_item = 'createTimeInMillis';
     $scope.order_reverse = true;
     //进入会话，初始化基础变量
@@ -22,7 +22,7 @@
         $scope.singleChats = angular.fromJson(response);
         console.log($scope.singleChats);
         //发送广播事件singleContact.update
-        $rootScope.$broadcast('singleContact.update');
+        $rootScope.$broadcast('singleContact.firstUpdate');
         $scope.$apply();
     }, function (errorStr) {
         $ionicLoading.show({
@@ -40,9 +40,15 @@
         $rootScope.$broadcast('singleContact.update');
         $scope.$apply();
     });
+    //接收广播事件singleContact.firstUpdate
+    $scope.$on('singleContact.firstUpdate', function (event) {
+        //将滚动条置于最低部,不使用动画效果
+        $ionicScrollDelegate.$getByHandle('contentscroll').scrollBottom(false);
+    });
     //接收广播事件singleContact.update
     $scope.$on('singleContact.update', function (event) {
-        //TODO 将滚动条置于最低部
+        //将滚动条置于最低部,使用动画效果
+        $ionicScrollDelegate.$getByHandle('contentscroll').scrollBottom(true);
     });
 
     $scope.sendSingleTextMessage = function (text) {
