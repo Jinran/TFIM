@@ -31,12 +31,12 @@
         }
     })
     //用户选项卡
-    .state('tab.me', {
-        url: '/me',
+    .state('tab.myDetail', {
+        url: '/myDetail',
         views: {
-            'tab-me': {
-                templateUrl: 'templates/tab-me.html',
-                controller: 'meCtrl'
+            'tab-my-detail': {
+                templateUrl: 'templates/tab-my-detail.html',
+                controller: 'myDetailCtrl'
             }
         }
     })

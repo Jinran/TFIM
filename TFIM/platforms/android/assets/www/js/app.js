@@ -15,6 +15,7 @@ angular.module('starter', [
     'test',
     'chats', 
     'contacts',
+    'myDetail',
     'chatService', 
     'singleContact', 
     'contactDetail'
